@@ -1,23 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-// import css
 import './assets/css/main.css';
+import App from './components/app';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 
-// import component
-import Background from './components/backgound';
-
-// import  other
-
-function App() {
-    return <Background>
-        <div className="p-2">
-            
-        </div>
-    </Background>
+function Router() {
+    return <HashRouter>
+        <Switch>
+            <Route exact path="/" component={App} />
+        </Switch>
+    </HashRouter>
 }
 
 ReactDOM.render(
-    <App />,
+    <Router />,
     document.getElementById('root')
     );

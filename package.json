@@ -1,5 +1,6 @@
 {
-  "name": "electron-react-boilerplate",
+  "name": "absensi",
+  "description": "Absensi untuk anggota Lanius Lab",
   "version": "0.0.1",
   "private": true,
   "homepage": ".",
@@ -8,8 +9,11 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "moment": "^2.24.0",
+    "quotesy": "^1.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1",
     "tailwindcss": "^1.1.4"
   },
@@ -19,8 +23,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron-start": "electron .",
-    "electron-package": "electron-packager . app --platform linux --arch x64 --out dist/",
-    "electron-deb64": "electron-installer-debian --src dist/app-linux-x64/ --dest dist/installers/ --arch amd64"
+    "electron-package": "electron-packager . absensi --platform linux --arch x64 --out dist/ --overwrite",
+    "electron-deb64": "electron-installer-debian --src dist/absensi-linux-x64/ --dest dist/installers/ --arch amd64",
+    "production": "yarn build && yarn electron-package && yarn electron-deb64"
   },
   "eslintConfig": {
     "extends": "react-app"
